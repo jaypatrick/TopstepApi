@@ -1,0 +1,40 @@
+using System.Text.Json.Serialization;
+
+namespace GeneratedCode;
+
+[System.CodeDom.Compiler.GeneratedCode("NJsonSchema", "14.4.0.0 (NJsonSchema v11.3.2.0 (Newtonsoft.Json v13.0.3.0))")]
+public partial class PlaceOrderRequest
+{
+
+    [JsonPropertyName("accountId")]
+    public int AccountId { get; set; }
+
+    [JsonPropertyName("contractId")]
+    [System.ComponentModel.DataAnnotations.Required(AllowEmptyStrings = true)]
+    public string ContractId { get; set; }
+
+    [JsonPropertyName("type")]
+    public OrderType Type { get; set; }
+
+    [JsonPropertyName("side")]
+    public OrderSide Side { get; set; }
+
+    [JsonPropertyName("size")]
+    public int Size { get; set; }
+
+    [JsonPropertyName("limitPrice")]
+    public decimal? LimitPrice { get; set; }
+
+    [JsonPropertyName("stopPrice")]
+    public decimal? StopPrice { get; set; }
+
+    [JsonPropertyName("trailPrice")]
+    public decimal? TrailPrice { get; set; }
+
+    [JsonPropertyName("customTag")]
+    public string CustomTag { get; set; }
+
+    [JsonPropertyName("linkedOrderId")]
+    public long? LinkedOrderId { get; set; }
+
+}

@@ -21,7 +21,7 @@ public class TopstepClientFactory
     private readonly IAuthenticationProvider _authenticationProvider;
     private readonly HttpClient _httpClient;
 
-    public GitHubClientFactory(HttpClient httpClient)
+    public TopstepClientFactory(HttpClient httpClient)
     {
         _authenticationProvider = new AnonymousAuthenticationProvider();
         _httpClient = httpClient;

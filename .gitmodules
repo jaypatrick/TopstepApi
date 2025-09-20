@@ -1,3 +1,6 @@
 [submodule "Samples"]
 	path = Samples
 	url = https://github.com/Quantower/Examples
+[submodule "Scripts"]
+	path = Scripts
+	url = https://github.com/Quantower/Scripts

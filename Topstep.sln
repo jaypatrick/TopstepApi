@@ -15,7 +15,7 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "Typescript", "Typescript\Ty
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSwag", "NSwag\NSwag.csproj", "{2644480D-9C79-4DAF-ADC4-B3BF9AA24D2C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D05C0DF6-2D5C-4330-91BE-9135BB31FC5F}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{B16C9E4F-A180-4817-82C3-10C4CE0B9F56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

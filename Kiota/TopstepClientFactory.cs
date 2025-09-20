@@ -8,7 +8,7 @@ namespace Kiota;
 /// <summary>
 /// 
 /// </summary>
-public class GitHubClientFactory
+public class TopstepClientFactory
 {
     private readonly IAuthenticationProvider _authenticationProvider;
     private readonly HttpClient _httpClient;

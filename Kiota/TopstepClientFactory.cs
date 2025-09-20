@@ -17,7 +17,7 @@ public class TopstepClientFactory
     /// 
     /// </summary>
     /// <param name="httpClient"></param>
-    public GitHubClientFactory(HttpClient httpClient)
+    public TopstepClientFactory(HttpClient httpClient)
     {
         _authenticationProvider = new AnonymousAuthenticationProvider();
         _httpClient = httpClient;

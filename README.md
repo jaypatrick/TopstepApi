@@ -1,13 +1,21 @@
 # TopStep API .Net/TypeScript Client Libraries
+Topstep is a popular proprietary trading firm with an OpenApi specification for integration of 3rd party tools. This project includes several different client framework implementatons of the Topstep API.
+
+#### Client frameworks
+- Kiota (C#)
+- NSwag (C#)
+- OpenApi (C#)
+- Refit (C#)
+- TypeScript (TSC)
 
 ## Simplify development projects against the TopStep API
+- Fluent API for chaining method calls
+- Responsive async methods
+- Libraries for C# and TypeScript client applications
+- Kiota implementation can be integrated as middleware via DI
 
 ### Project Types
-
-- Kiota
-- OpenApi
-- NSwag
-- Refitter
+All libraries are for use in client-side applications
 
 ```
 using Topstep.TopstepClient;

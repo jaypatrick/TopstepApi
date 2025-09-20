@@ -99,7 +99,7 @@ builder.Services.AddSwaggerGen();
 // Add Kiota handlers to the dependency injection container
 builder.Services.AddKiotaHandlers();
 
-// Register the factory for the GitHub client
+// Register the factory for the Topstep Kiota runtime client
 builder.Services.AddHttpClient<TopstepClientFactory>((sp, client) => {
     // Set the base address and accept header
     // or other settings on the http client

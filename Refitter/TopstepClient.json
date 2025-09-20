@@ -1301,7 +1301,7 @@
     },
     "OrderStatus": {
       "type": "integer",
-      "description": "0 = None\n1 = Open\n2 = Filled\n3 = Cancelled\n4 = Expired\n5 = Rejected\n6 = Pending",
+      "description": "0 = None\n1 = Open\n2 = Filled\n3 = Cancelled\n4 = Expired\n5 = Rejected\n6 = Pending\n7 = PendingCancellation\n8 = Suspended",
       "x-enumNames": [
         "None",
         "Open",
@@ -1309,7 +1309,9 @@
         "Cancelled",
         "Expired",
         "Rejected",
-        "Pending"
+        "Pending",
+        "PendingCancellation",
+        "Suspended"
       ],
       "enum": [
         0,
@@ -1318,7 +1320,9 @@
         3,
         4,
         5,
-        6
+        6,
+        7,
+        8
       ]
     },
     "OrderType": {
@@ -1484,9 +1488,27 @@
         "customTag": {
           "type": "string"
         },
-        "linkedOrderId": {
+        "stopLossBracket": {
+          "$ref": "#/definitions/PlaceOrderBracket"
+        },
+        "takeProfitBracket": {
+          "$ref": "#/definitions/PlaceOrderBracket"
+        }
+      }
+    },
+    "PlaceOrderBracket": {
+      "type": "object",
+      "required": [
+        "ticks",
+        "type"
+      ],
+      "properties": {
+        "ticks": {
           "type": "integer",
-          "format": "int64"
+          "format": "int32"
+        },
+        "type": {
+          "$ref": "#/definitions/OrderType"
         }
       }
     },

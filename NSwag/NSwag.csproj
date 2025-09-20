@@ -10,4 +10,19 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="TopstepClient.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TopstepClient.json</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TopstepClient.json">
+      <Generator>NSwagCodeGenerator</Generator>
+      <LastGenOutput>TopstepClient.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
 </Project>

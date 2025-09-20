@@ -1,1 +1,1 @@
-This will house SandCastle documentation ultimately, and will build a github site automatically upon updates.
+This will house SandCastle documentation ultimately, and will build a GitHub site automatically upon updates.

@@ -1,6 +1,0 @@
-@TopstepCSServer_HostAddress = http://localhost:5157
-
-GET {{TopstepCSServer_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

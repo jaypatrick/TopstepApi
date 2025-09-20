@@ -10,7 +10,7 @@
 - Refitter
 
 ```
-using GitHub.ApiClient;
+using Topstep.TopstepClient;
 using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 

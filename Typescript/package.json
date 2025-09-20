@@ -16,5 +16,9 @@
     "@types/node": "^24.5.2",
     "eslint": "^9.36.0",
     "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@microsoft/kiota-authentication-azure": "1.0.0-preview.96",
+    "@microsoft/kiota-bundle": "1.0.0-preview.96"
   }
 }

@@ -6,7 +6,7 @@ using Microsoft.Kiota.Http.HttpClientLibrary;
 namespace Kiota;
 
 /// <summary>
-/// 
+///     Factory for creating Topstep API clients
 /// </summary>
 public class TopstepClientFactory
 {
@@ -14,7 +14,7 @@ public class TopstepClientFactory
     private readonly HttpClient _httpClient;
 
     /// <summary>
-    /// 
+    ///     Constructor
     /// </summary>
     /// <param name="httpClient"></param>
     public TopstepClientFactory(HttpClient httpClient)
@@ -24,7 +24,7 @@ public class TopstepClientFactory
     }
 
     /// <summary>
-    /// 
+    ///     Factory method for creating a new Topstep API client
     /// </summary>
     /// <returns></returns>
     public ApiClient GetClient()

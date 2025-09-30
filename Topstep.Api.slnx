@@ -1,0 +1,21 @@
+<Solution>
+  <Folder Name="/Docs/" />
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+  </Folder>
+  <Folder Name="/src/" />
+  <Folder Name="/src/clients/">
+    <Project Path="Kiota/Kiota.csproj" Id="b381c179-74cd-41a2-86a9-59583fac92d8" />
+    <Project Path="OpenApi/OpenApi.csproj" Id="e169f479-82b3-44ad-b8bb-c0444b0e76dd" />
+    <Project Path="Refitter/Refitter.csproj" Id="60a73297-0a3b-4f36-8fb1-fc79e11f2020" />
+  </Folder>
+  <Folder Name="/src/clients/rpc/">
+    <Project Path="Market/Market.csproj" Id="4dd69eb5-1c22-4519-8a2f-3ee1c57fb73b" />
+    <Project Path="User/User.csproj" Id="cbc8927d-93eb-4374-9c0e-464954553b26" />
+  </Folder>
+  <Folder Name="/src/servers/" />
+  <Folder Name="/src/tests/" />
+  <Folder Name="/src/ui/">
+    <Project Path="Console/Console.csproj" Id="1d9ff4fc-dab6-4fc1-8fd4-ddab82f2707d" />
+  </Folder>
+</Solution>

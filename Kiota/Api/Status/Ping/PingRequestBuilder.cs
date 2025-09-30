@@ -8,7 +8,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Kiota.Api.Status.Ping
+namespace Topstep.Api.Api.Status.Ping
 {
     /// <summary>
     /// Builds and executes requests for operations under \api\Status\ping
@@ -17,7 +17,7 @@ namespace Kiota.Api.Status.Ping
     public partial class PingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="global::Kiota.Api.Status.Ping.PingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Topstep.Api.Api.Status.Ping.PingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Kiota.Api.Status.Ping
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Kiota.Api.Status.Ping.PingRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Topstep.Api.Api.Status.Ping.PingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -72,11 +72,11 @@ namespace Kiota.Api.Status.Ping
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Kiota.Api.Status.Ping.PingRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Topstep.Api.Api.Status.Ping.PingRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Kiota.Api.Status.Ping.PingRequestBuilder WithUrl(string rawUrl)
+        public global::Topstep.Api.Api.Status.Ping.PingRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Kiota.Api.Status.Ping.PingRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Topstep.Api.Api.Status.Ping.PingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

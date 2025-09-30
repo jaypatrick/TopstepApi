@@ -2,74 +2,122 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Kiota.Models
+namespace Topstep.Api.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LoginAppRequest : IAdditionalDataHolder, IParsable
+    public partial class LoginAppRequest : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData
+        {
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
+            set { BackingStore.Set("AdditionalData", value); }
+        }
         /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId { get; set; }
+        public string? AppId
+        {
+            get { return BackingStore?.Get<string?>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
 #nullable restore
 #else
-        public string AppId { get; set; }
+        public string AppId
+        {
+            get { return BackingStore?.Get<string>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
 #endif
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId { get; set; }
+        public string? DeviceId
+        {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
 #nullable restore
 #else
-        public string DeviceId { get; set; }
+        public string DeviceId
+        {
+            get { return BackingStore?.Get<string>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
 #endif
         /// <summary>The password property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Password { get; set; }
+        public string? Password
+        {
+            get { return BackingStore?.Get<string?>("password"); }
+            set { BackingStore?.Set("password", value); }
+        }
 #nullable restore
 #else
-        public string Password { get; set; }
+        public string Password
+        {
+            get { return BackingStore?.Get<string>("password"); }
+            set { BackingStore?.Set("password", value); }
+        }
 #endif
         /// <summary>The userName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName { get; set; }
+        public string? UserName
+        {
+            get { return BackingStore?.Get<string?>("userName"); }
+            set { BackingStore?.Set("userName", value); }
+        }
 #nullable restore
 #else
-        public string UserName { get; set; }
+        public string UserName
+        {
+            get { return BackingStore?.Get<string>("userName"); }
+            set { BackingStore?.Set("userName", value); }
+        }
 #endif
         /// <summary>The verifyKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VerifyKey { get; set; }
+        public string? VerifyKey
+        {
+            get { return BackingStore?.Get<string?>("verifyKey"); }
+            set { BackingStore?.Set("verifyKey", value); }
+        }
 #nullable restore
 #else
-        public string VerifyKey { get; set; }
+        public string VerifyKey
+        {
+            get { return BackingStore?.Get<string>("verifyKey"); }
+            set { BackingStore?.Set("verifyKey", value); }
+        }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Kiota.Models.LoginAppRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Topstep.Api.Models.LoginAppRequest"/> and sets the default values.
         /// </summary>
         public LoginAppRequest()
         {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Kiota.Models.LoginAppRequest"/></returns>
+        /// <returns>A <see cref="global::Topstep.Api.Models.LoginAppRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Kiota.Models.LoginAppRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Topstep.Api.Models.LoginAppRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Kiota.Models.LoginAppRequest();
+            return new global::Topstep.Api.Models.LoginAppRequest();
         }
         /// <summary>
         /// The deserialization information for the current model

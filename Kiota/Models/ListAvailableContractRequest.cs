@@ -2,36 +2,48 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Kiota.Models
+namespace Topstep.Api.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ListAvailableContractRequest : IAdditionalDataHolder, IParsable
+    public partial class ListAvailableContractRequest : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData
+        {
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
+            set { BackingStore.Set("AdditionalData", value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The live property</summary>
-        public bool? Live { get; set; }
+        public bool? Live
+        {
+            get { return BackingStore?.Get<bool?>("live"); }
+            set { BackingStore?.Set("live", value); }
+        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Kiota.Models.ListAvailableContractRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Topstep.Api.Models.ListAvailableContractRequest"/> and sets the default values.
         /// </summary>
         public ListAvailableContractRequest()
         {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Kiota.Models.ListAvailableContractRequest"/></returns>
+        /// <returns>A <see cref="global::Topstep.Api.Models.ListAvailableContractRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Kiota.Models.ListAvailableContractRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Topstep.Api.Models.ListAvailableContractRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Kiota.Models.ListAvailableContractRequest();
+            return new global::Topstep.Api.Models.ListAvailableContractRequest();
         }
         /// <summary>
         /// The deserialization information for the current model

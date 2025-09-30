@@ -2,82 +2,162 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Kiota.Models
+namespace Topstep.Api.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OrderModel : IAdditionalDataHolder, IParsable
+    public partial class OrderModel : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accountId property</summary>
-        public int? AccountId { get; set; }
+        public int? AccountId
+        {
+            get { return BackingStore?.Get<int?>("accountId"); }
+            set { BackingStore?.Set("accountId", value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData
+        {
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
+            set { BackingStore.Set("AdditionalData", value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The contractId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContractId { get; set; }
+        public string? ContractId
+        {
+            get { return BackingStore?.Get<string?>("contractId"); }
+            set { BackingStore?.Set("contractId", value); }
+        }
 #nullable restore
 #else
-        public string ContractId { get; set; }
+        public string ContractId
+        {
+            get { return BackingStore?.Get<string>("contractId"); }
+            set { BackingStore?.Set("contractId", value); }
+        }
 #endif
         /// <summary>The creationTimestamp property</summary>
-        public DateTimeOffset? CreationTimestamp { get; set; }
+        public DateTimeOffset? CreationTimestamp
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("creationTimestamp"); }
+            set { BackingStore?.Set("creationTimestamp", value); }
+        }
         /// <summary>The customTag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomTag { get; set; }
+        public string? CustomTag
+        {
+            get { return BackingStore?.Get<string?>("customTag"); }
+            set { BackingStore?.Set("customTag", value); }
+        }
 #nullable restore
 #else
-        public string CustomTag { get; set; }
+        public string CustomTag
+        {
+            get { return BackingStore?.Get<string>("customTag"); }
+            set { BackingStore?.Set("customTag", value); }
+        }
 #endif
         /// <summary>The filledPrice property</summary>
-        public decimal? FilledPrice { get; set; }
+        public decimal? FilledPrice
+        {
+            get { return BackingStore?.Get<decimal?>("filledPrice"); }
+            set { BackingStore?.Set("filledPrice", value); }
+        }
         /// <summary>The fillVolume property</summary>
-        public int? FillVolume { get; set; }
+        public int? FillVolume
+        {
+            get { return BackingStore?.Get<int?>("fillVolume"); }
+            set { BackingStore?.Set("fillVolume", value); }
+        }
         /// <summary>The id property</summary>
-        public long? Id { get; set; }
+        public long? Id
+        {
+            get { return BackingStore?.Get<long?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
         /// <summary>The limitPrice property</summary>
-        public decimal? LimitPrice { get; set; }
+        public decimal? LimitPrice
+        {
+            get { return BackingStore?.Get<decimal?>("limitPrice"); }
+            set { BackingStore?.Set("limitPrice", value); }
+        }
         /// <summary>0 = Bid1 = Ask</summary>
-        public int? Side { get; set; }
+        public int? Side
+        {
+            get { return BackingStore?.Get<int?>("side"); }
+            set { BackingStore?.Set("side", value); }
+        }
         /// <summary>The size property</summary>
-        public int? Size { get; set; }
+        public int? Size
+        {
+            get { return BackingStore?.Get<int?>("size"); }
+            set { BackingStore?.Set("size", value); }
+        }
         /// <summary>0 = None1 = Open2 = Filled3 = Cancelled4 = Expired5 = Rejected6 = Pending7 = PendingCancellation8 = Suspended</summary>
-        public int? Status { get; set; }
+        public int? Status
+        {
+            get { return BackingStore?.Get<int?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
         /// <summary>The stopPrice property</summary>
-        public decimal? StopPrice { get; set; }
+        public decimal? StopPrice
+        {
+            get { return BackingStore?.Get<decimal?>("stopPrice"); }
+            set { BackingStore?.Set("stopPrice", value); }
+        }
         /// <summary>The symbolId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SymbolId { get; set; }
+        public string? SymbolId
+        {
+            get { return BackingStore?.Get<string?>("symbolId"); }
+            set { BackingStore?.Set("symbolId", value); }
+        }
 #nullable restore
 #else
-        public string SymbolId { get; set; }
+        public string SymbolId
+        {
+            get { return BackingStore?.Get<string>("symbolId"); }
+            set { BackingStore?.Set("symbolId", value); }
+        }
 #endif
         /// <summary>0 = Unknown1 = Limit2 = Market3 = StopLimit4 = Stop5 = TrailingStop6 = JoinBid7 = JoinAsk</summary>
-        public int? Type { get; set; }
+        public int? Type
+        {
+            get { return BackingStore?.Get<int?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>The updateTimestamp property</summary>
-        public DateTimeOffset? UpdateTimestamp { get; set; }
+        public DateTimeOffset? UpdateTimestamp
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("updateTimestamp"); }
+            set { BackingStore?.Set("updateTimestamp", value); }
+        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Kiota.Models.OrderModel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Topstep.Api.Models.OrderModel"/> and sets the default values.
         /// </summary>
         public OrderModel()
         {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Kiota.Models.OrderModel"/></returns>
+        /// <returns>A <see cref="global::Topstep.Api.Models.OrderModel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Kiota.Models.OrderModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Topstep.Api.Models.OrderModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Kiota.Models.OrderModel();
+            return new global::Topstep.Api.Models.OrderModel();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -2,46 +2,78 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Kiota.Models
+namespace Topstep.Api.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AggregateBarModel : IAdditionalDataHolder, IParsable
+    public partial class AggregateBarModel : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData
+        {
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
+            set { BackingStore.Set("AdditionalData", value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The c property</summary>
-        public decimal? C { get; set; }
+        public decimal? C
+        {
+            get { return BackingStore?.Get<decimal?>("c"); }
+            set { BackingStore?.Set("c", value); }
+        }
         /// <summary>The h property</summary>
-        public decimal? H { get; set; }
+        public decimal? H
+        {
+            get { return BackingStore?.Get<decimal?>("h"); }
+            set { BackingStore?.Set("h", value); }
+        }
         /// <summary>The l property</summary>
-        public decimal? L { get; set; }
+        public decimal? L
+        {
+            get { return BackingStore?.Get<decimal?>("l"); }
+            set { BackingStore?.Set("l", value); }
+        }
         /// <summary>The o property</summary>
-        public decimal? O { get; set; }
+        public decimal? O
+        {
+            get { return BackingStore?.Get<decimal?>("o"); }
+            set { BackingStore?.Set("o", value); }
+        }
         /// <summary>The t property</summary>
-        public DateTimeOffset? T { get; set; }
+        public DateTimeOffset? T
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("t"); }
+            set { BackingStore?.Set("t", value); }
+        }
         /// <summary>The v property</summary>
-        public long? V { get; set; }
+        public long? V
+        {
+            get { return BackingStore?.Get<long?>("v"); }
+            set { BackingStore?.Set("v", value); }
+        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Kiota.Models.AggregateBarModel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Topstep.Api.Models.AggregateBarModel"/> and sets the default values.
         /// </summary>
         public AggregateBarModel()
         {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Kiota.Models.AggregateBarModel"/></returns>
+        /// <returns>A <see cref="global::Topstep.Api.Models.AggregateBarModel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Kiota.Models.AggregateBarModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Topstep.Api.Models.AggregateBarModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Kiota.Models.AggregateBarModel();
+            return new global::Topstep.Api.Models.AggregateBarModel();
         }
         /// <summary>
         /// The deserialization information for the current model

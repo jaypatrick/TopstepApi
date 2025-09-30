@@ -2,54 +2,86 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Kiota.Models
+namespace Topstep.Api.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchOrderResponse : IAdditionalDataHolder, IParsable
+    public partial class SearchOrderResponse : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData
+        {
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
+            set { BackingStore.Set("AdditionalData", value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>0 = Success1 = AccountNotFound</summary>
-        public int? ErrorCode { get; set; }
+        public int? ErrorCode
+        {
+            get { return BackingStore?.Get<int?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
+        }
         /// <summary>The errorMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage { get; set; }
+        public string? ErrorMessage
+        {
+            get { return BackingStore?.Get<string?>("errorMessage"); }
+            set { BackingStore?.Set("errorMessage", value); }
+        }
 #nullable restore
 #else
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage
+        {
+            get { return BackingStore?.Get<string>("errorMessage"); }
+            set { BackingStore?.Set("errorMessage", value); }
+        }
 #endif
         /// <summary>The orders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Kiota.Models.OrderModel>? Orders { get; set; }
+        public List<global::Topstep.Api.Models.OrderModel>? Orders
+        {
+            get { return BackingStore?.Get<List<global::Topstep.Api.Models.OrderModel>?>("orders"); }
+            set { BackingStore?.Set("orders", value); }
+        }
 #nullable restore
 #else
-        public List<global::Kiota.Models.OrderModel> Orders { get; set; }
+        public List<global::Topstep.Api.Models.OrderModel> Orders
+        {
+            get { return BackingStore?.Get<List<global::Topstep.Api.Models.OrderModel>>("orders"); }
+            set { BackingStore?.Set("orders", value); }
+        }
 #endif
         /// <summary>The success property</summary>
-        public bool? Success { get; set; }
+        public bool? Success
+        {
+            get { return BackingStore?.Get<bool?>("success"); }
+            set { BackingStore?.Set("success", value); }
+        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Kiota.Models.SearchOrderResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Topstep.Api.Models.SearchOrderResponse"/> and sets the default values.
         /// </summary>
         public SearchOrderResponse()
         {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Kiota.Models.SearchOrderResponse"/></returns>
+        /// <returns>A <see cref="global::Topstep.Api.Models.SearchOrderResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Kiota.Models.SearchOrderResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Topstep.Api.Models.SearchOrderResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Kiota.Models.SearchOrderResponse();
+            return new global::Topstep.Api.Models.SearchOrderResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,7 +93,7 @@ namespace Kiota.Models
             {
                 { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
                 { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
-                { "orders", n => { Orders = n.GetCollectionOfObjectValues<global::Kiota.Models.OrderModel>(global::Kiota.Models.OrderModel.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "orders", n => { Orders = n.GetCollectionOfObjectValues<global::Topstep.Api.Models.OrderModel>(global::Topstep.Api.Models.OrderModel.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "success", n => { Success = n.GetBoolValue(); } },
             };
         }
@@ -74,7 +106,7 @@ namespace Kiota.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("errorCode", ErrorCode);
             writer.WriteStringValue("errorMessage", ErrorMessage);
-            writer.WriteCollectionOfObjectValues<global::Kiota.Models.OrderModel>("orders", Orders);
+            writer.WriteCollectionOfObjectValues<global::Topstep.Api.Models.OrderModel>("orders", Orders);
             writer.WriteBoolValue("success", Success);
             writer.WriteAdditionalData(AdditionalData);
         }

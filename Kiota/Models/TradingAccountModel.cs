@@ -2,52 +2,88 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Kiota.Models
+namespace Topstep.Api.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class TradingAccountModel : IAdditionalDataHolder, IParsable
+    public partial class TradingAccountModel : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData
+        {
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
+            set { BackingStore.Set("AdditionalData", value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The balance property</summary>
-        public decimal? Balance { get; set; }
+        public decimal? Balance
+        {
+            get { return BackingStore?.Get<decimal?>("balance"); }
+            set { BackingStore?.Set("balance", value); }
+        }
         /// <summary>The canTrade property</summary>
-        public bool? CanTrade { get; set; }
+        public bool? CanTrade
+        {
+            get { return BackingStore?.Get<bool?>("canTrade"); }
+            set { BackingStore?.Set("canTrade", value); }
+        }
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public int? Id
+        {
+            get { return BackingStore?.Get<int?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
         /// <summary>The isVisible property</summary>
-        public bool? IsVisible { get; set; }
+        public bool? IsVisible
+        {
+            get { return BackingStore?.Get<bool?>("isVisible"); }
+            set { BackingStore?.Set("isVisible", value); }
+        }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name
+        {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name
+        {
+            get { return BackingStore?.Get<string>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
 #endif
         /// <summary>The simulated property</summary>
-        public bool? Simulated { get; set; }
+        public bool? Simulated
+        {
+            get { return BackingStore?.Get<bool?>("simulated"); }
+            set { BackingStore?.Set("simulated", value); }
+        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Kiota.Models.TradingAccountModel"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Topstep.Api.Models.TradingAccountModel"/> and sets the default values.
         /// </summary>
         public TradingAccountModel()
         {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Kiota.Models.TradingAccountModel"/></returns>
+        /// <returns>A <see cref="global::Topstep.Api.Models.TradingAccountModel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Kiota.Models.TradingAccountModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Topstep.Api.Models.TradingAccountModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Kiota.Models.TradingAccountModel();
+            return new global::Topstep.Api.Models.TradingAccountModel();
         }
         /// <summary>
         /// The deserialization information for the current model

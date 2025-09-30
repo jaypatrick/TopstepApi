@@ -2,80 +2,148 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Kiota.Models
+namespace Topstep.Api.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PlaceOrderRequest : IAdditionalDataHolder, IParsable
+    public partial class PlaceOrderRequest : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accountId property</summary>
-        public int? AccountId { get; set; }
+        public int? AccountId
+        {
+            get { return BackingStore?.Get<int?>("accountId"); }
+            set { BackingStore?.Set("accountId", value); }
+        }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData
+        {
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
+            set { BackingStore.Set("AdditionalData", value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The contractId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContractId { get; set; }
+        public string? ContractId
+        {
+            get { return BackingStore?.Get<string?>("contractId"); }
+            set { BackingStore?.Set("contractId", value); }
+        }
 #nullable restore
 #else
-        public string ContractId { get; set; }
+        public string ContractId
+        {
+            get { return BackingStore?.Get<string>("contractId"); }
+            set { BackingStore?.Set("contractId", value); }
+        }
 #endif
         /// <summary>The customTag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomTag { get; set; }
+        public string? CustomTag
+        {
+            get { return BackingStore?.Get<string?>("customTag"); }
+            set { BackingStore?.Set("customTag", value); }
+        }
 #nullable restore
 #else
-        public string CustomTag { get; set; }
+        public string CustomTag
+        {
+            get { return BackingStore?.Get<string>("customTag"); }
+            set { BackingStore?.Set("customTag", value); }
+        }
 #endif
         /// <summary>The limitPrice property</summary>
-        public decimal? LimitPrice { get; set; }
+        public decimal? LimitPrice
+        {
+            get { return BackingStore?.Get<decimal?>("limitPrice"); }
+            set { BackingStore?.Set("limitPrice", value); }
+        }
         /// <summary>0 = Bid1 = Ask</summary>
-        public int? Side { get; set; }
+        public int? Side
+        {
+            get { return BackingStore?.Get<int?>("side"); }
+            set { BackingStore?.Set("side", value); }
+        }
         /// <summary>The size property</summary>
-        public int? Size { get; set; }
+        public int? Size
+        {
+            get { return BackingStore?.Get<int?>("size"); }
+            set { BackingStore?.Set("size", value); }
+        }
         /// <summary>The stopLossBracket property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Kiota.Models.PlaceOrderBracket? StopLossBracket { get; set; }
+        public global::Topstep.Api.Models.PlaceOrderBracket? StopLossBracket
+        {
+            get { return BackingStore?.Get<global::Topstep.Api.Models.PlaceOrderBracket?>("stopLossBracket"); }
+            set { BackingStore?.Set("stopLossBracket", value); }
+        }
 #nullable restore
 #else
-        public global::Kiota.Models.PlaceOrderBracket StopLossBracket { get; set; }
+        public global::Topstep.Api.Models.PlaceOrderBracket StopLossBracket
+        {
+            get { return BackingStore?.Get<global::Topstep.Api.Models.PlaceOrderBracket>("stopLossBracket"); }
+            set { BackingStore?.Set("stopLossBracket", value); }
+        }
 #endif
         /// <summary>The stopPrice property</summary>
-        public decimal? StopPrice { get; set; }
+        public decimal? StopPrice
+        {
+            get { return BackingStore?.Get<decimal?>("stopPrice"); }
+            set { BackingStore?.Set("stopPrice", value); }
+        }
         /// <summary>The takeProfitBracket property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Kiota.Models.PlaceOrderBracket? TakeProfitBracket { get; set; }
+        public global::Topstep.Api.Models.PlaceOrderBracket? TakeProfitBracket
+        {
+            get { return BackingStore?.Get<global::Topstep.Api.Models.PlaceOrderBracket?>("takeProfitBracket"); }
+            set { BackingStore?.Set("takeProfitBracket", value); }
+        }
 #nullable restore
 #else
-        public global::Kiota.Models.PlaceOrderBracket TakeProfitBracket { get; set; }
+        public global::Topstep.Api.Models.PlaceOrderBracket TakeProfitBracket
+        {
+            get { return BackingStore?.Get<global::Topstep.Api.Models.PlaceOrderBracket>("takeProfitBracket"); }
+            set { BackingStore?.Set("takeProfitBracket", value); }
+        }
 #endif
         /// <summary>The trailPrice property</summary>
-        public decimal? TrailPrice { get; set; }
+        public decimal? TrailPrice
+        {
+            get { return BackingStore?.Get<decimal?>("trailPrice"); }
+            set { BackingStore?.Set("trailPrice", value); }
+        }
         /// <summary>0 = Unknown1 = Limit2 = Market3 = StopLimit4 = Stop5 = TrailingStop6 = JoinBid7 = JoinAsk</summary>
-        public int? Type { get; set; }
+        public int? Type
+        {
+            get { return BackingStore?.Get<int?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>
-        /// Instantiates a new <see cref="global::Kiota.Models.PlaceOrderRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Topstep.Api.Models.PlaceOrderRequest"/> and sets the default values.
         /// </summary>
         public PlaceOrderRequest()
         {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Kiota.Models.PlaceOrderRequest"/></returns>
+        /// <returns>A <see cref="global::Topstep.Api.Models.PlaceOrderRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Kiota.Models.PlaceOrderRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Topstep.Api.Models.PlaceOrderRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Kiota.Models.PlaceOrderRequest();
+            return new global::Topstep.Api.Models.PlaceOrderRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,9 +159,9 @@ namespace Kiota.Models
                 { "limitPrice", n => { LimitPrice = n.GetDecimalValue(); } },
                 { "side", n => { Side = n.GetIntValue(); } },
                 { "size", n => { Size = n.GetIntValue(); } },
-                { "stopLossBracket", n => { StopLossBracket = n.GetObjectValue<global::Kiota.Models.PlaceOrderBracket>(global::Kiota.Models.PlaceOrderBracket.CreateFromDiscriminatorValue); } },
+                { "stopLossBracket", n => { StopLossBracket = n.GetObjectValue<global::Topstep.Api.Models.PlaceOrderBracket>(global::Topstep.Api.Models.PlaceOrderBracket.CreateFromDiscriminatorValue); } },
                 { "stopPrice", n => { StopPrice = n.GetDecimalValue(); } },
-                { "takeProfitBracket", n => { TakeProfitBracket = n.GetObjectValue<global::Kiota.Models.PlaceOrderBracket>(global::Kiota.Models.PlaceOrderBracket.CreateFromDiscriminatorValue); } },
+                { "takeProfitBracket", n => { TakeProfitBracket = n.GetObjectValue<global::Topstep.Api.Models.PlaceOrderBracket>(global::Topstep.Api.Models.PlaceOrderBracket.CreateFromDiscriminatorValue); } },
                 { "trailPrice", n => { TrailPrice = n.GetDecimalValue(); } },
                 { "type", n => { Type = n.GetIntValue(); } },
             };
@@ -111,9 +179,9 @@ namespace Kiota.Models
             writer.WriteDecimalValue("limitPrice", LimitPrice);
             writer.WriteIntValue("side", Side);
             writer.WriteIntValue("size", Size);
-            writer.WriteObjectValue<global::Kiota.Models.PlaceOrderBracket>("stopLossBracket", StopLossBracket);
+            writer.WriteObjectValue<global::Topstep.Api.Models.PlaceOrderBracket>("stopLossBracket", StopLossBracket);
             writer.WriteDecimalValue("stopPrice", StopPrice);
-            writer.WriteObjectValue<global::Kiota.Models.PlaceOrderBracket>("takeProfitBracket", TakeProfitBracket);
+            writer.WriteObjectValue<global::Topstep.Api.Models.PlaceOrderBracket>("takeProfitBracket", TakeProfitBracket);
             writer.WriteDecimalValue("trailPrice", TrailPrice);
             writer.WriteIntValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

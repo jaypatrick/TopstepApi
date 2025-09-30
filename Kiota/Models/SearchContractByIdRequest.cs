@@ -2,42 +2,58 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System.Collections.Generic;
 using System.IO;
 using System;
-namespace Kiota.Models
+namespace Topstep.Api.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class SearchContractByIdRequest : IAdditionalDataHolder, IParsable
+    public partial class SearchContractByIdRequest : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        public IDictionary<string, object> AdditionalData
+        {
+            get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
+            set { BackingStore.Set("AdditionalData", value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The contractId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContractId { get; set; }
+        public string? ContractId
+        {
+            get { return BackingStore?.Get<string?>("contractId"); }
+            set { BackingStore?.Set("contractId", value); }
+        }
 #nullable restore
 #else
-        public string ContractId { get; set; }
+        public string ContractId
+        {
+            get { return BackingStore?.Get<string>("contractId"); }
+            set { BackingStore?.Set("contractId", value); }
+        }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Kiota.Models.SearchContractByIdRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Topstep.Api.Models.SearchContractByIdRequest"/> and sets the default values.
         /// </summary>
         public SearchContractByIdRequest()
         {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Kiota.Models.SearchContractByIdRequest"/></returns>
+        /// <returns>A <see cref="global::Topstep.Api.Models.SearchContractByIdRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Kiota.Models.SearchContractByIdRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Topstep.Api.Models.SearchContractByIdRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Kiota.Models.SearchContractByIdRequest();
+            return new global::Topstep.Api.Models.SearchContractByIdRequest();
         }
         /// <summary>
         /// The deserialization information for the current model

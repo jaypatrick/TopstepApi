@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Kiota.Http.HttpClientLibrary;
 
-namespace Kiota.Extensions;
+namespace Topstep.Api.Extensions;
 
 /// <summary>
 /// Service collection extensions for Kiota handlers.
@@ -13,7 +13,7 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services"><see cref="IServiceCollection"/> to add the services to</param>
     /// <returns><see cref="IServiceCollection"/> as per convention</returns>
-    /// <remarks>The handlers are added to the http client by the <see cref="AttachKiotaHandlers(IHttpClientBuilder)"/> call, which requires them to be pre-registered in DI</remarks>
+    /// <remarks>The handlers are added to the http client by the <see cref="AttachHandlers(IHttpClientBuilder)"/> call, which requires them to be pre-registered in DI</remarks>
     public static IServiceCollection AddHandlers(this IServiceCollection services)
     {
         // Dynamically load the Kiota handlers from the Client Factory
@@ -33,7 +33,7 @@ public static class ServiceCollectionExtensions
     /// <param name="builder"></param>
     /// <returns></returns>
     /// <remarks>
-    /// Requires the handlers to be registered in DI by <see cref="AddKiotaHandlers(IServiceCollection)"/>.
+    /// Requires the handlers to be registered in DI by <see cref="AddHandlers(IServiceCollection)"/>.
     /// The order in which the handlers are added is important, as it defines the order in which they will be executed.
     /// </remarks>
     public static IHttpClientBuilder AttachHandlers(this IHttpClientBuilder builder)

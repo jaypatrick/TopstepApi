@@ -1,5 +1,6 @@
 ﻿using Microsoft.Kiota.Abstractions.Authentication;
 using Microsoft.Kiota.Http.HttpClientLibrary;
+using Topstep.Api;
 
 namespace Topstep.Client;
 
@@ -14,8 +15,8 @@ public class TopstepClientFactory
         _httpClient = httpClient;
     }
 
-    public Kiota.ApiClient GetClient()
+    public TopstepApiClient GetClient()
     {
-        return new Kiota.ApiClient(new HttpClientRequestAdapter(_authenticationProvider, httpClient: _httpClient));
+        return new TopstepApiClient(new HttpClientRequestAdapter(_authenticationProvider, httpClient: _httpClient));
     }
 }
